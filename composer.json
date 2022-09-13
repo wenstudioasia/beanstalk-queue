@@ -1,0 +1,16 @@
+{
+  "name": "wenstudioasia/beanstalk-queue",
+  "description": "Beanstalk work queue plugin for webman",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.2",
+    "workerman/webman-framework": "^1.3.0",
+    "pda/pheanstalk": "^4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Wenstudio\\BeanstalkQueue\\": "src"
+    }
+  }
+}
