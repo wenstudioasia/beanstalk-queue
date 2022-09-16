@@ -64,16 +64,16 @@ use Wenstudio\\BeanstalkQueue\\Client;
 
 class $class implements Consumer
 {
-    // 要消费的队列名
+    // beanstalk tube name
     public \$tube = '$tube';
-    // reserve 操作的超時秒數
+    // reserve timeout (seconds)
     public \$reserve_timeout =10;
-    // 指示退出訂閱
+    // if quit
     public \$quit = false;
-    // 连接名，对应 plugin/webman/beanstalk-queue/beanstalk.php 里的连接`
+    // connection name，@see `plugin/webman/beanstalk-queue/beanstalk.php`
     public \$connection = 'default';
 
-    // 消费
+    // consume
     public function consume(\$job)
     {
         \$data = \$job->getData();
@@ -90,5 +90,4 @@ class $class implements Consumer
 EOF;
         file_put_contents($file, $controller_content);
     }
-
 }

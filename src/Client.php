@@ -27,7 +27,7 @@ use Pheanstalk\Pheanstalk;
 class Client
 {
     /**
-     * @var Client[] $_connections
+     * @var array $_connections
      */
     protected static $_connections = null;
 
@@ -54,13 +54,16 @@ class Client
     }
 
     /**
+     * Send data to beanstalk
      * 
      * @param string $tube          tube name
      * @param string|array $data    parameter
      * @param int $priority         
      * @param int $delay            delay in seconds
      * @param int $retry_after      in seconds
-     * @param string $instance      
+     * @param string $instance      beanstalkd instance
+     * 
+     * @return Pheanstalk\Job 
      */
     public static function send($tube, $data, $priority = Pheanstalk::DEFAULT_PRIORITY, $delay = Pheanstalk::DEFAULT_DELAY, $retry_after = Pheanstalk::DEFAULT_TTR, $instance = 'default')
     {
